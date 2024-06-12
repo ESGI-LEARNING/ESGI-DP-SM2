@@ -1,5 +1,5 @@
 {
-    "name": "designpattern-sm2",
+    "name": "design-patterns",
     "autoload": {
         "psr-4": {
             "App\\": "src/"
