@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Payement\CreditCard;
+namespace App\Payment\CreditCard;
 
 use InvalidArgumentException;
 

@@ -13,5 +13,7 @@
             "email": "contact@theomeunier.fr"
         }
     ],
-    "require": {}
+    "require": {
+        "stripe/stripe-php": "v9.2.0-beta.1"
+    }
 }
