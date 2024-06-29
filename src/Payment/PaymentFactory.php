@@ -2,7 +2,6 @@
 
 namespace App\Payment;
 
-use App\Payment\Paypal\PaypalPayment;
 use App\Payment\Stripe\StripePayment;
 
 abstract class PaymentFactory
@@ -13,11 +12,10 @@ abstract class PaymentFactory
     {
     }
 
-    public function createPayment(): StripePayment|PaypalPayment
+    public function gateway(): StripePayment
     {
         return match ($this->gateway) {
             'stripe' => new StripePayment(),
-            'paypal' => new PaypalPayment(),
             default => throw new \InvalidArgumentException('Unknown gateway'),
         };
     }

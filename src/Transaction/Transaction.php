@@ -7,6 +7,7 @@ use App\State\TransactionStateInterface;
 
 class Transaction
 {
+    private int $id;
     /**
      * mode of transaction is either 'sandbox' or 'live'
      *
@@ -81,5 +82,15 @@ class Transaction
     public function nextState(): void
     {
         $this->state->handle($this);
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function setId(int $id): void
+    {
+        $this->id = $id;
     }
 }

@@ -6,15 +6,17 @@ class CreditCard
 {
     use CreditCardValidatorTrait;
 
+    private ?int $id = null;
+
     private string $number;
 
-    private string $cvv;
+    private string $cvc;
 
     private string $expiry;
 
     private string $name;
 
-    public function __construct(string $number, string $cvv, string $expiry, string $name)
+    public function __construct(string $number, string $cvc, string $expiry, string $name)
     {
         $this->validateNumber($number);
         $this->validateExpirationDate($number);
@@ -22,7 +24,7 @@ class CreditCard
         $this->validateCardHolderName($number);
 
         $this->number = $number;
-        $this->cvv = $cvv;
+        $this->cvc = $cvc;
         $this->expiry = $expiry;
         $this->name = $name;
     }
@@ -32,9 +34,9 @@ class CreditCard
         return $this->number;
     }
 
-    public function getCvv(): string
+    public function getCvc(): string
     {
-        return $this->cvv;
+        return $this->cvc;
     }
 
     public function getExpiry(): string
@@ -45,5 +47,15 @@ class CreditCard
     public function getName(): string
     {
         return $this->name;
+    }
+
+    public function getId(): int
+    {
+        return $this->id ?: 0;
+    }
+
+    public function setId(int $id): void
+    {
+        $this->id = $id;
     }
 }
