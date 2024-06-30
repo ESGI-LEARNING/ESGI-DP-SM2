@@ -103,7 +103,7 @@ class Paypal implements PaymentInterface
 
 ```php
 
-public function createPayment(): StripePayment
+public function gateway(): StripePayment
 {
     return match ($this->gateway) {
         'stripe' => new StripePayment(),
